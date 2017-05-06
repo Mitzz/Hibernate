@@ -66,6 +66,5 @@ public class User {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName="
 				+ lastName + "]";
 	}
-
 	
 }
