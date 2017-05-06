@@ -4,25 +4,25 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="org.mitz.model">
-	<class name="BillingDetails" table="TB_BILLING_DETAIL" discriminator-value="BILL_DETAIL">
+	<class name="BillingDetails" table="TB_BILLING_DETAIL">
 		<id name="id" type="long" column = "BILLING_ID">
 			<generator class="native" />
 		</id>
-		
-		<discriminator column="TYPE" type="java.lang.String" />
 		<property name="owner" type="java.lang.String" column="OWNER" />
 		
-		<subclass discriminator-value="BANK_ACC" name="BankAccount">
+		<joined-subclass name="BankAccount" table="BANK_ACCOUNT">
+			<key column="BILL_ID" />
 			<property name="account" column="ACC" />
 			<property name="bankname" column="BANK_NAME" />
 			<property name="swift" column="SWIFT" />
-		</subclass>
+		</joined-subclass>
 		
-		<subclass discriminator-value="CREDIT_CARD" name="CreditCard">
+		<joined-subclass name="CreditCard" table="CREDIT_CARD">
+			<key column="BILL_ID" />
 			<property name="number" column="CC_NO" />
 			<property name="expMonth" column="EXP_MONTH" />
 			<property name="expYear" column="EXP_YEAR" />
-		</subclass>
+		</joined-subclass>
 		
 	</class>
 </hibernate-mapping>
