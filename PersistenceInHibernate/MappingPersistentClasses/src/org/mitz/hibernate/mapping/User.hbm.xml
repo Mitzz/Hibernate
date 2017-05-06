@@ -15,11 +15,13 @@
             <column name="LASTNAME" />
         </property>
         <component name="homeAddress" class="org.mitz.model.Address">
+        	<parent name="user"/>
         	<property name="street" column="HOME_STREET" type="java.lang.String"/>
         	<property name="zipcode" column="HOME_ZIP_CODE" type="java.lang.String"/>
         	<property name="city" column="HOME_CITY" type="java.lang.String"/>
         </component>
         <component name="billingAddress" class="org.mitz.model.Address">
+        	<parent name="user"/>
         	<property name="street" column="BILLING_STREET" type="java.lang.String"/>
         	<property name="zipcode" column="BILLING_ZIP_CODE" type="java.lang.String"/>
         	<property name="city" column="BILLING_CITY" type="java.lang.String"/>

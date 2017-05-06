@@ -5,6 +5,7 @@ public class Address {
 	private String street;
 	private String zipcode;
 	private String city;
+	private User user;
 	
 	public Address() {
 		super();
@@ -39,6 +40,21 @@ public class Address {
 
 	public void setCity(String city) {
 		this.city = city;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public Address setUser(User user) {
+		this.user = user;
+		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [street=" + street + ", zipcode=" + zipcode + ", city="
+				+ city + "]";
 	}
 
 	

@@ -7,7 +7,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		UserDao dao = new UserDao();
-		User user = dao.retrieve(2L);
-		System.out.println(user);
+		User user = dao.retrieve(3L);
+		System.out.println(user.getBillingAddress().getUser());
 	}
 }
