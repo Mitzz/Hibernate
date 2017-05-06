@@ -1,6 +1,9 @@
 package org.mitz.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Item {
@@ -8,6 +11,8 @@ public class Item {
 	private long id;
 	private String name;
 	private Set<String> images = new HashSet<String>();
+	private Collection<String> imageBag = new ArrayList<String>();
+	private List<String> imageList = new ArrayList<String>();
 
 	public long getId() {
 		return id;
@@ -36,4 +41,22 @@ public class Item {
 		return this;
 	}
 
+	public Collection<String> getImageBag() {
+		return imageBag;
+	}
+
+	public Item setImageBag(Collection<String> imageBag) {
+		this.imageBag = imageBag;
+		return this;
+	}
+
+	public List<String> getImageList() {
+		return imageList;
+	}
+
+	public Item setImageList(List<String> imageList) {
+		this.imageList = imageList;return this;
+	}
+
+	
 }

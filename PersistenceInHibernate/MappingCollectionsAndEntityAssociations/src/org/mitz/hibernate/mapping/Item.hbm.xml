@@ -11,5 +11,17 @@
 			<key column="ITEM_ID" />
 			<element column="IMAGE_NAME" type="java.lang.String" />
 		</set>
+		<idbag name="imageBag" table="ITEM_IMAGE_BAG">
+			<collection-id type="java.lang.Long" column="ITEM_IMAGE_ID">
+				<generator class="native" />
+			</collection-id>
+			<key column="ITEM_ID" />
+			<element column="IMAGE_NAME" type="java.lang.String" />
+		</idbag>
+		<list name="imageList" table="ITEM_IMAGE_LIST">
+			<key column="ITEM_ID" />
+			<list-index column="IMAGE_INDEX" />
+			<element column="IMAGE_NAME" type="java.lang.String" />
+		</list>
 	</class>
 </hibernate-mapping>
