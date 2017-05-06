@@ -25,7 +25,7 @@ public class UserDao {
 		Session session = sf.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-		User user = (User) session.get(User.class, 1L);
+		User user = (User) session.get(User.class, id);
 		
 		transaction.commit();
 		session.close();
