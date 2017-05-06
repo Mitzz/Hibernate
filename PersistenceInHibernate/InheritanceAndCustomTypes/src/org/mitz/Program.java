@@ -58,6 +58,8 @@ public class Program {
 			System.out.println("Card Id: " + card.getId());
 		}
 		
+		System.out.println(accountDao.retrive(2L));
+		System.out.println(cardDao.retrive(4L));
 	}
 }
 
