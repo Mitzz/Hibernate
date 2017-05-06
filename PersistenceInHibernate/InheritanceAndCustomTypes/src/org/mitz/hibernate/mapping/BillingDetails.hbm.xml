@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.mitz.model">
+	<class name="BillingDetails" abstract="true">
+		<id name="id" type="long" column = "BILLING_ID">
+			<generator class="native" />
+		</id>
+		<property name="owner" type="java.lang.String" column="OWNER" />
+		
+		<union-subclass table="BANK_ACCOUNT" name="BankAccount">
+			<property name="account" column="ACC" />
+			<property name="bankname" column="BANK_NAME" />
+			<property name="swift" column="SWIFT" />
+		</union-subclass>
+		
+		<union-subclass table="CREDIT_CARD" name="CreditCard">
+			<property name="number" column="CC_NO" />
+			<property name="expMonth" column="EXP_MONTH" />
+			<property name="expYear" column="EXP_YEAR" />
+		</union-subclass>
+		
+	</class>
+</hibernate-mapping>
