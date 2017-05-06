@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.mitz.dao.BankAccountDao;
+import org.mitz.dao.BillingDetailDao;
 import org.mitz.dao.CreditCardDao;
 import org.mitz.model.BankAccount;
+import org.mitz.model.BillingDetails;
 import org.mitz.model.CreditCard;
 
 public class Program {
 	public static List<BankAccount> bankAccounts = new ArrayList<BankAccount>();
 	public static List<CreditCard> creditCards = new ArrayList<CreditCard>();
+	public static List<BillingDetails> billingDetails = new ArrayList<BillingDetails>();
 	
 	static {
 		BankAccount acc = new BankAccount();
@@ -43,11 +46,23 @@ public class Program {
 		cc.setExpYear("Y2");
 		
 		creditCards.add(cc);
+		
+		BillingDetails billDetail = new BillingDetails();
+		billDetail.setOwner("OWNER5");
+		
+		billingDetails.add(billDetail);
+		
+		billDetail = new BillingDetails();
+		billDetail.setOwner("OWNER6");
+		
+		billingDetails.add(billDetail);
 	}
 
 	public static void main(String[] args) {
 		BankAccountDao accountDao = new BankAccountDao();
 		CreditCardDao cardDao = new CreditCardDao();
+		BillingDetailDao billDetailDao = new BillingDetailDao();
+		
 		for(BankAccount acc: bankAccounts){
 			accountDao.create(acc);
 			System.out.println("Account Id: " + acc.getId());
@@ -58,8 +73,14 @@ public class Program {
 			System.out.println("Card Id: " + card.getId());
 		}
 		
+		for(BillingDetails billDetail: billingDetails){
+			billDetailDao.create(billDetail);
+			System.out.println("Bill Detail Id: " + billDetail.getId());
+		}
+		
 		System.out.println(accountDao.retrive(2L));
 		System.out.println(cardDao.retrive(4L));
+		System.out.println(billDetailDao.retrive(6L));
 	}
 }
 
