@@ -1,6 +1,5 @@
 package org.mitz;
 
-import org.mitz.dao.BidDao;
 import org.mitz.dao.ItemDao;
 import org.mitz.model.Bid;
 import org.mitz.model.Item;
@@ -9,7 +8,7 @@ public class Program {
 
 	public static void main(String[] args) {
 		ItemDao itemDao = new ItemDao();
-		BidDao bidDao = new BidDao();
+
 		Item item = new Item();
 		item.setName("ITEM1");
 		
@@ -24,7 +23,8 @@ public class Program {
 		item.addBid(bid2);
 		
 		itemDao.create(item);
-		bidDao.create(bid1);
-		bidDao.create(bid2);
+		
+		Item retrieveItem = itemDao.retrieve(1L);
+		System.out.println(retrieveItem);
 	}
 }

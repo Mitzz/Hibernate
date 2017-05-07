@@ -36,5 +36,10 @@ public class Bid {
 		return this;
 	}
 
+	@Override
+	public String toString() {
+		return "Bid [id=" + id + ", amount=" + amount + "]";
+	}
+
 	
 }

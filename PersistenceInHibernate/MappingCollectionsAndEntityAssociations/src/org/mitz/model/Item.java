@@ -41,4 +41,11 @@ public class Item {
 		bid.setItem(this);
 		return this;
 	}
+
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + ", bids=" + bids + "]";
+	}
+
+	
 }
