@@ -26,5 +26,7 @@ public class Program {
 		
 		Item retrieveItem = itemDao.retrieve(1L);
 		System.out.println(retrieveItem);
+		
+		itemDao.delete(1L);
 	}
 }

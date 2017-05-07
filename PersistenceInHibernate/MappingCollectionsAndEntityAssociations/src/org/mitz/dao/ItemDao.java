@@ -29,4 +29,14 @@ public class ItemDao {
 		session.close();
 		return item;
 	}
+	
+	public void delete(long id) {
+		Session session = sf.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Item ent = (Item) session.load(Item.class, id);
+		session.delete(ent);
+		transaction.commit();
+		session.close();
+	}
 }
