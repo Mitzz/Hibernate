@@ -29,5 +29,6 @@
 		<property name="format_sql">true</property>
 		<!-- List of XML mapping files -->
 		<mapping resource="org/mitz/hibernate/mapping/Item.hbm.xml" />
+		<mapping resource="org/mitz/hibernate/mapping/Bid.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

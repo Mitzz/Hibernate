@@ -1,59 +1,31 @@
 package org.mitz;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
+import org.mitz.dao.BidDao;
 import org.mitz.dao.ItemDao;
-import org.mitz.model.Image;
+import org.mitz.model.Bid;
 import org.mitz.model.Item;
 
 public class Program {
 
-	public static List<Item> items = new ArrayList<Item>();
-
-	static {
-		Set<Image> images = new HashSet<Image>();
-		
+	public static void main(String[] args) {
+		BidDao bidDao = new BidDao();
+		ItemDao itemDao = new ItemDao();
 		Item item = new Item();
 		item.setName("ITEM1");
-		Image img = new Image();
-		img.setName("IMG1");
-		img.setFilename("FILE1");
-		img.setSizeX(1);
-		img.setSizeY(2);
-		images.add(img);
 		
-		img = new Image();
-		img.setName("IMG2");
-		img.setFilename("FILE2");
-		img.setSizeX(3);
-		img.setSizeY(4);
-		images.add(img);
+		Bid bid = new Bid();
+		bid.setAmount(12);
+		bid.setItem(item);
 		
-		img = new Image();
-		img.setName("IMG3");
-		img.setFilename("FILE3");
-		img.setSizeX(-1);
-		img.setSizeY(-2);
-		images.add(img);
+		itemDao.create(item); //This is necessary
+		bidDao.create(bid);
 		
-		item.setImages(images);
-		items.add(item);
+		bid = new Bid();
+		bid.setAmount(14);
+		bid.setItem(item);
+		
+		bidDao.create(bid);
 
-	}
-
-	public static void main(String[] args) {
-		ItemDao dao = new ItemDao();
 		
-		for(Item item: items)
-			dao.create(item);
-		
-		Item item = dao.retrieve(1L);
-		System.out.println(item);
-		Set<Image> images = item.getImages();
-		for(Image image: images)
-			System.out.println(image);
 	}
 }

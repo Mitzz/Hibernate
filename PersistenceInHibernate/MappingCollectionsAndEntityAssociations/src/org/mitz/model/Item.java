@@ -1,13 +1,10 @@
 package org.mitz.model;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 public class Item {
 
 	private long id;
 	private String name;
-	private Set<Image> images = new LinkedHashSet<Image>();
 	
 	public long getId() {
 		return id;
@@ -27,13 +24,5 @@ public class Item {
 		return this;
 	}
 
-	public Set<Image> getImages() {
-		return images;
-	}
-
-	public void setImages(Set<Image> images) {
-		this.images = images;
-	}
-
-	
+		
 }
