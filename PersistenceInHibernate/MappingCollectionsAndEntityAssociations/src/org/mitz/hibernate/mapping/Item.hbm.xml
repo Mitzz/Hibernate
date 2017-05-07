@@ -7,5 +7,9 @@
 			<generator class="native" />
 		</id>
 		<property name="name" type="java.lang.String" column="NAME"/>
+		<set name="bids" inverse="true">
+			<key column="ITEM_ID" />
+			<one-to-many class="Bid"/>
+		</set>
 	</class>
 </hibernate-mapping>

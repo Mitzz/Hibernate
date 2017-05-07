@@ -8,24 +8,23 @@ import org.mitz.model.Item;
 public class Program {
 
 	public static void main(String[] args) {
-		BidDao bidDao = new BidDao();
 		ItemDao itemDao = new ItemDao();
+		BidDao bidDao = new BidDao();
 		Item item = new Item();
 		item.setName("ITEM1");
 		
-		Bid bid = new Bid();
-		bid.setAmount(12);
-		bid.setItem(item);
+		Bid bid1 = new Bid();
+		bid1.setAmount(12);
+		bid1.setItem(item);
+		item.addBid(bid1);
 		
-		itemDao.create(item); //This is necessary
-		bidDao.create(bid);
+		Bid bid2 = new Bid();
+		bid2.setAmount(14);
+		bid2.setItem(item);
+		item.addBid(bid2);
 		
-		bid = new Bid();
-		bid.setAmount(14);
-		bid.setItem(item);
-		
-		bidDao.create(bid);
-
-		
+		itemDao.create(item);
+		bidDao.create(bid1);
+		bidDao.create(bid2);
 	}
 }
