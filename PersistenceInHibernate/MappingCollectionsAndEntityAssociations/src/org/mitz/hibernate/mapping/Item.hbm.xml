@@ -23,5 +23,10 @@
 			<list-index column="IMAGE_INDEX" />
 			<element column="IMAGE_NAME" type="java.lang.String" />
 		</list>
+		<map name="imageMap" table="ITEM_IMAGE_MAP">
+			<key column="ITEM_ID" />
+			<map-key type="java.lang.String" column="IMAGE_KEY" />
+			<element column="IMAGE_VALUE" type="java.lang.String" />
+		</map>
 	</class>
 </hibernate-mapping>
