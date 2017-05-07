@@ -7,7 +7,7 @@
 			<generator class="native" />
 		</id>
 		<property name="name" type="java.lang.String" column="NAME"/>
-		<set name="images" table="ITEM_IMAGE" lazy="false">
+		<set name="images" table="ITEM_IMAGE" order-by="SIZE_X asc" lazy="false">
 			<key column="ITEM_ID" />
 			<composite-element class="Image">
 				<parent name="item"/>

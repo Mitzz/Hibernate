@@ -56,5 +56,11 @@ public class Image {
 		return this;
 	}
 
+	@Override
+	public String toString() {
+		return "Image [name=" + name + ", filename=" + filename + ", sizeX="
+				+ sizeX + ", sizeY=" + sizeY + "]";
+	}
+
 	
 }

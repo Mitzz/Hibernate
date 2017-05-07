@@ -35,8 +35,8 @@ public class Program {
 		img = new Image();
 		img.setName("IMG3");
 		img.setFilename("FILE3");
-		img.setSizeX(3);
-		img.setSizeY(4);
+		img.setSizeX(-1);
+		img.setSizeY(-2);
 		images.add(img);
 		
 		item.setImages(images);
@@ -54,6 +54,6 @@ public class Program {
 		System.out.println(item);
 		Set<Image> images = item.getImages();
 		for(Image image: images)
-			System.out.println(image.getItem());
+			System.out.println(image);
 	}
 }
