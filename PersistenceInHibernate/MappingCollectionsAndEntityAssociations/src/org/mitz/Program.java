@@ -1,11 +1,12 @@
 package org.mitz;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 import org.mitz.dao.ItemDao;
+import org.mitz.model.Image;
 import org.mitz.model.Item;
 
 public class Program {
@@ -13,31 +14,31 @@ public class Program {
 	public static List<Item> items = new ArrayList<Item>();
 
 	static {
-		Set<String> images = new TreeSet<String>();
+		Set<Image> images = new HashSet<Image>();
 		
 		Item item = new Item();
 		item.setName("ITEM1");
-		images.add("IMG1");
-		images.add("IMG3");
-		images.add("IMG2");
-		item.setImages(images);
-		items.add(item);
-
-		item = new Item();
-		images = new TreeSet<String>();
-		item.setName("ITEM2");
-		images.add("IMG6");
-		images.add("IMG5");
-		images.add("IMG4");
-		item.setImages(images);
-		items.add(item);
-
-		item = new Item();
-		images = new TreeSet<String>();
-		item.setName("ITEM3");
-		images.add("IMG78");
-		images.add("IMG7");
-		images.add("IMG9");
+		Image img = new Image();
+		img.setName("IMG1");
+		img.setFilename("FILE1");
+		img.setSizeX(1);
+		img.setSizeY(2);
+		images.add(img);
+		
+		img = new Image();
+		img.setName("IMG2");
+		img.setFilename("FILE2");
+		img.setSizeX(3);
+		img.setSizeY(4);
+		images.add(img);
+		
+		img = new Image();
+		img.setName("IMG3");
+		img.setFilename("FILE3");
+		img.setSizeX(3);
+		img.setSizeY(4);
+		images.add(img);
+		
 		item.setImages(images);
 		items.add(item);
 
@@ -49,8 +50,7 @@ public class Program {
 		for(Item item: items)
 			dao.create(item);
 		
-		Item item = dao.retrieve(1L);
-		System.out.println(item.getImages());
+		
 		
 	}
 }
