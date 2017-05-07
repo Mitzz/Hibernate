@@ -1,13 +1,13 @@
 package org.mitz.model;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Item {
 
 	private long id;
 	private String name;
-	private Set<String> images = new TreeSet<String>();
+	private Set<String> images = new LinkedHashSet<String>();
 	
 	public long getId() {
 		return id;

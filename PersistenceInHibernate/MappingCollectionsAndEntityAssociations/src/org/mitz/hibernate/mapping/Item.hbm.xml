@@ -7,7 +7,7 @@
 			<generator class="native" />
 		</id>
 		<property name="name" type="java.lang.String" column="NAME"/>
-		<set name="images" table="ITEM_IMAGE" sort="org.mitz.util.comparator.StringReverseOrder" lazy="false">
+		<set name="images" table="ITEM_IMAGE" order-by="lower(IMAGE_NAME) desc" lazy="false">
 			<key column="ITEM_ID" />
 			<element column="IMAGE_NAME" type="java.lang.String" />
 		</set>
