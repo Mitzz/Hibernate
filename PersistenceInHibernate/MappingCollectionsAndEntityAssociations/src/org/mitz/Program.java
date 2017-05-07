@@ -50,7 +50,10 @@ public class Program {
 		for(Item item: items)
 			dao.create(item);
 		
-		
-		
+		Item item = dao.retrieve(1L);
+		System.out.println(item);
+		Set<Image> images = item.getImages();
+		for(Image image: images)
+			System.out.println(image.getItem());
 	}
 }

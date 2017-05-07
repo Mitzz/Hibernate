@@ -10,6 +10,7 @@
 		<set name="images" table="ITEM_IMAGE" lazy="false">
 			<key column="ITEM_ID" />
 			<composite-element class="Image">
+				<parent name="item"/>
 				<property name="name" column="NAME" />
 				<property name="filename" column="FILE_NAME" />
 				<property name="sizeX" column="SIZE_X" />

@@ -6,6 +6,7 @@ public class Image {
 	private String filename;
 	private int sizeX;
 	private int sizeY;
+	private Item item;
 
 	public Image() {
 	}
@@ -46,4 +47,14 @@ public class Image {
 		return this;
 	}
 
+	public Item getItem() {
+		return item;
+	}
+
+	public Image setItem(Item item) {
+		this.item = item;
+		return this;
+	}
+
+	
 }
