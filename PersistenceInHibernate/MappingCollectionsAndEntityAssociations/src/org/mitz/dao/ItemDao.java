@@ -21,15 +21,12 @@ public class ItemDao {
 	}
 	
 	public Item retrieve(long id) {
-		SessionFactory sf = HibernateUtil.getSessionFactory();
 		Session session = sf.openSession();
 		Transaction transaction = session.beginTransaction();
 		
 		Item item = (Item) session.get(Item.class, id);
-		
 		transaction.commit();
 		session.close();
-		sf.close();
 		return item;
 	}
 }

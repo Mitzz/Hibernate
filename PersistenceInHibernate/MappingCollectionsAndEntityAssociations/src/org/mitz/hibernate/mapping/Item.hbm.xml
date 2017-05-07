@@ -6,27 +6,10 @@
 		<id name="id" column="ITEM_ID" type="java.lang.Long">
 			<generator class="native" />
 		</id>
-		<property name="name" type="java.lang.String" column="NAME" />
-		<set name="images" table="ITEM_IMAGE">
+		<property name="name" type="java.lang.String" column="NAME"/>
+		<set name="images" table="ITEM_IMAGE" sort="natural" lazy="false">
 			<key column="ITEM_ID" />
 			<element column="IMAGE_NAME" type="java.lang.String" />
 		</set>
-		<idbag name="imageBag" table="ITEM_IMAGE_BAG">
-			<collection-id type="java.lang.Long" column="ITEM_IMAGE_ID">
-				<generator class="native" />
-			</collection-id>
-			<key column="ITEM_ID" />
-			<element column="IMAGE_NAME" type="java.lang.String" />
-		</idbag>
-		<list name="imageList" table="ITEM_IMAGE_LIST">
-			<key column="ITEM_ID" />
-			<list-index column="IMAGE_INDEX" />
-			<element column="IMAGE_NAME" type="java.lang.String" />
-		</list>
-		<map name="imageMap" table="ITEM_IMAGE_MAP">
-			<key column="ITEM_ID" />
-			<map-key type="java.lang.String" column="IMAGE_KEY" />
-			<element column="IMAGE_VALUE" type="java.lang.String" />
-		</map>
 	</class>
 </hibernate-mapping>
