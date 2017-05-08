@@ -20,6 +20,5 @@ public class Program {
 		item.addBid(bid2);
 		
 		itemDao.create(item);
-		
 	}
 }

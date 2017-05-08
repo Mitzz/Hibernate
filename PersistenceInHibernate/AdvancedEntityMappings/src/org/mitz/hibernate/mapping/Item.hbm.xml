@@ -8,7 +8,7 @@
 		</id>
 		<property name="name" type="java.lang.String" column="NAME"/>
 		<list name="bids" cascade="save-update, delete" lazy="false">
-			<key column="ITEM_ID" />
+			<key column="ITEM_ID" not-null="true"/>
 			<list-index base="1" column="BID_POSITION" />
 			<one-to-many class="Bid"/>
 		</list>

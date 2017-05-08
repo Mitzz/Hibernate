@@ -38,6 +38,7 @@ public class Item {
 	
 	public Item addBid(Bid bid){
 		bids.add(bid);
+		bid.setItem(this);
 		return this;
 	}
 
