@@ -13,12 +13,10 @@ public class Program {
 		
 		Bid bid1 = new Bid();
 		bid1.setAmount(12);
-		bid1.setItem(item);
 		item.addBid(bid1);
 		
 		Bid bid2 = new Bid();
 		bid2.setAmount(14);
-		bid2.setItem(item);
 		item.addBid(bid2);
 		
 		itemDao.create(item);

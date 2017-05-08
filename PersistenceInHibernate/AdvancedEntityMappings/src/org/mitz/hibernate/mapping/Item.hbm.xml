@@ -7,9 +7,10 @@
 			<generator class="native" />
 		</id>
 		<property name="name" type="java.lang.String" column="NAME"/>
-		<bag name="bids" inverse="true" cascade="save-update, delete" lazy="false">
+		<list name="bids" cascade="save-update, delete" lazy="false">
 			<key column="ITEM_ID" />
+			<list-index base="1" column="BID_POSITION" />
 			<one-to-many class="Bid"/>
-		</bag>
+		</list>
 	</class>
 </hibernate-mapping>

@@ -1,14 +1,13 @@
 package org.mitz.model;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Set;
+import java.util.List;
 
 public class Item {
 
 	private long id;
 	private String name;
-	private Collection<Bid> bids = new ArrayList<Bid>();
+	private List<Bid> bids = new ArrayList<Bid>();
 	
 	public long getId() {
 		return id;
@@ -28,18 +27,17 @@ public class Item {
 		return this;
 	}
 
-	public Collection<Bid> getBids() {
+	public List<Bid> getBids() {
 		return bids;
 	}
 
-	public Item setBids(Collection<Bid> bids) {
+	public Item setBids(List<Bid> bids) {
 		this.bids = bids;
 		return this;
 	}
 	
 	public Item addBid(Bid bid){
 		bids.add(bid);
-		bid.setItem(this);
 		return this;
 	}
 

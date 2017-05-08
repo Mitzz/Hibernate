@@ -4,7 +4,6 @@ public class Bid {
 
 	private Long id;
 	private int amount;
-	private Item item;
 	
 	public Bid() {
 	}
@@ -15,15 +14,6 @@ public class Bid {
 
 	public Bid setId(Long id) {
 		this.id = id;
-		return this;
-	}
-
-	public Item getItem() {
-		return item;
-	}
-
-	public Bid setItem(Item item) {
-		this.item = item;
 		return this;
 	}
 
