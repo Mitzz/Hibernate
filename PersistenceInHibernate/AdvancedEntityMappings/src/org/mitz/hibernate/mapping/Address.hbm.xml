@@ -9,5 +9,6 @@
 		<property name="street" column="STREET" type="java.lang.String" />
 		<property name="zipCode" column="ZIP_CODE" type="java.lang.Integer" />
 		<property name="city" column="CITY" type="java.lang.String" />
+		<one-to-one name="user" class="User" property-ref="shippingAddress" />
 	</class>
 </hibernate-mapping>

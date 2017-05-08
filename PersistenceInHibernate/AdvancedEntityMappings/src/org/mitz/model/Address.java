@@ -6,6 +6,7 @@ public class Address {
 	private String street;
 	private String city;
 	private int zipCode;
+	private User user;
 	
 	public Address() {
 	}
@@ -46,6 +47,14 @@ public class Address {
 		return this;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public Address setUser(User user) {
+		this.user = user;
+		return this;
+	}
 	
 	
 }
