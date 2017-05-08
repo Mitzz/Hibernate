@@ -7,6 +7,6 @@
 			<generator class="native" />
 		</id>
 		<property name="name" column="NAME" type="java.lang.String" />
-		<one-to-one name="shippingAddress" cascade="save-update" />
+		<many-to-one name="shippingAddress" class="Address" column="SHIPPING_ADDRESS_ID" unique="true" cascade="save-update"/>
 	</class>
 </hibernate-mapping>

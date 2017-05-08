@@ -34,7 +34,6 @@ public class User {
 
 	public User setShippingAddress(Address shippingAddress) {
 		this.shippingAddress = shippingAddress;
-		shippingAddress.setUser(this);
 		return this;
 	}
 
