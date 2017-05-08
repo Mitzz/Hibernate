@@ -1,25 +1,27 @@
 package org.mitz;
 
-import org.mitz.dao.UserDao;
-import org.mitz.model.Address;
-import org.mitz.model.User;
+import org.mitz.dao.ItemDao;
+import org.mitz.model.Bid;
+import org.mitz.model.Item;
 
 public class Program {
 
 	public static void main(String[] args) {
-		UserDao dao = new UserDao();
+		ItemDao itemDao = new ItemDao();
+		Item item = new Item();
+		item.setName("ITEM1");
 		
-		User user = new User();
-		user.setName("Mithul");
+		Bid bid1 = new Bid();
+		bid1.setAmount(12);
+		bid1.setItem(item);
+		item.addBid(bid1);
 		
-		Address shipping = new Address();
-		shipping.setCity("MUMBAI");
-		shipping.setStreet("MG ROAD");
-		shipping.setZipCode(400067);
+		Bid bid2 = new Bid();
+		bid2.setAmount(14);
+		bid2.setItem(item);
+		item.addBid(bid2);
 		
-		user.setShippingAddress(shipping);
-		
-		dao.create(user);
+		itemDao.create(item);
 		
 	}
 }

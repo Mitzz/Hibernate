@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.mitz.model">
+	<class name="Bid" table="BID_MASTER">
+		<id name="id" column="BID_ID" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="amount" column="AMOUNT"/>
+		<many-to-one name="item" column="ITEM_ID" class="Item" not-null="true" />
+	</class>
+</hibernate-mapping>
