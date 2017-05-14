@@ -17,7 +17,6 @@ public class UserDao {
 		
 		transaction.commit();
 		session.close();
-		sf.close();
 	}
 
 	public User retrieve(long id) {

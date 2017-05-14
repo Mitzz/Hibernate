@@ -1,13 +1,25 @@
 package org.mitz;
 
-import org.mitz.dao.ItemDao;
+import org.mitz.dao.UserDao;
+import org.mitz.model.Address;
 import org.mitz.model.Bid;
 import org.mitz.model.Item;
+import org.mitz.model.User;
 
 public class Program {
 
 	public static void main(String[] args) {
-		ItemDao itemDao = new ItemDao();
+		User user = new User();
+		user.setName("Mitz");
+		
+		Address address = new Address();
+		address.setCity("Mumbai");
+		address.setStreet("MG ROAD");
+		address.setZipCode(400067);
+		
+		user.setShippingAddress(address);
+		
+		UserDao userDao = new UserDao();
 		Item item = new Item();
 		item.setName("ITEM1");
 		
@@ -19,6 +31,9 @@ public class Program {
 		bid2.setAmount(14);
 		item.addBid(bid2);
 		
-		itemDao.create(item);
+		user.addBoughtItems(item);
+		
+		userDao.create(user);
+		
 	}
 }

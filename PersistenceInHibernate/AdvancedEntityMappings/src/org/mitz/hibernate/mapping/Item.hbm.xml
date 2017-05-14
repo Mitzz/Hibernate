@@ -12,5 +12,6 @@
 			<list-index base="1" column="BID_POSITION" />
 			<one-to-many class="Bid"/>
 		</list>
+		
 	</class>
 </hibernate-mapping>

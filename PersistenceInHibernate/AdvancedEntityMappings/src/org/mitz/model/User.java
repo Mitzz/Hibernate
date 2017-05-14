@@ -1,10 +1,14 @@
 package org.mitz.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class User {
 
 	private Long id;
 	private String name;
 	private Address shippingAddress;
+	private Set<Item> boughtItems = new HashSet<Item>();
 
 	public User() {
 		super();
@@ -34,7 +38,21 @@ public class User {
 
 	public User setShippingAddress(Address shippingAddress) {
 		this.shippingAddress = shippingAddress;
+		shippingAddress.setUser(this);
 		return this;
 	}
 
+	public Set<Item> getBoughtItems() {
+		return boughtItems;
+	}
+
+	public User setBoughtItems(Set<Item> boughtItems) {
+		this.boughtItems = boughtItems;
+		return this;
+	}
+
+	public User addBoughtItems(Item boughtItem) {
+		this.boughtItems.add(boughtItem);
+		return this;
+	}
 }

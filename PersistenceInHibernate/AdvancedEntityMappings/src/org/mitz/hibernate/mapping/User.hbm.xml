@@ -8,5 +8,9 @@
 		</id>
 		<property name="name" column="NAME" type="java.lang.String" />
 		<many-to-one name="shippingAddress" class="Address" column="SHIPPING_ADDRESS_ID" unique="true" cascade="save-update"/>
+		<set name="boughtItems" table="ITEM_BUYER" cascade="save-update">
+			<key column="USER_ID" />
+			<many-to-many class="Item" column="ITEM_ID" unique="true" />
+		</set>
 	</class>
 </hibernate-mapping>
