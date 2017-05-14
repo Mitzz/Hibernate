@@ -53,6 +53,14 @@ public class User {
 
 	public User addBoughtItems(Item boughtItem) {
 		this.boughtItems.add(boughtItem);
+		boughtItem.setBuyer(this);
 		return this;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 }

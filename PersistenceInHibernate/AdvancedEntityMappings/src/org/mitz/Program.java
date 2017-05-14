@@ -1,5 +1,6 @@
 package org.mitz;
 
+import org.mitz.dao.ItemDao;
 import org.mitz.dao.UserDao;
 import org.mitz.model.Address;
 import org.mitz.model.Bid;
@@ -35,5 +36,7 @@ public class Program {
 		
 		userDao.create(user);
 		
+		item = new ItemDao().retrieve(3l);
+		System.out.println(item.getBuyer());
 	}
 }

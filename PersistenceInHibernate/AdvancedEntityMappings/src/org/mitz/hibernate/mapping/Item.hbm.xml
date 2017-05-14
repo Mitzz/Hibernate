@@ -12,6 +12,9 @@
 			<list-index base="1" column="BID_POSITION" />
 			<one-to-many class="Bid"/>
 		</list>
-		
+		<join table="ITEM_BUYER" optional="true" inverse="true" >
+			  <key column="ITEM_ID" unique="true" not-null="true" />
+			  <many-to-one name="buyer" column="USER_ID" lazy="false"/>
+		</join>
 	</class>
 </hibernate-mapping>

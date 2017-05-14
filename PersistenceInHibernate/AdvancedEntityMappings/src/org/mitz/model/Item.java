@@ -8,6 +8,7 @@ public class Item {
 	private long id;
 	private String name;
 	private List<Bid> bids = new ArrayList<Bid>();
+	private User buyer;
 	
 	public long getId() {
 		return id;
@@ -47,4 +48,14 @@ public class Item {
 		return "Item [id=" + id + ", name=" + name + ", bids=" + bids + "]";
 	}
 
+	public User getBuyer() {
+		return buyer;
+	}
+
+	public Item setBuyer(User buyer) {
+		this.buyer = buyer;
+		return this;
+	}
+
+	
 }
