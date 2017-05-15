@@ -41,6 +41,14 @@ public class Category {
 
 	public Category addItem(Item item) {
 		items.add(item);
+		item.addCategory(this);
 		return this;
 	}
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + "]";
+	}
+	
+	
 }

@@ -46,5 +46,6 @@ public class Program {
 		
 		item = new ItemDao().retrieve(2l);
 		System.out.println(item.getBuyer());
+		System.out.println(item.getCategories());
 	}
 }
