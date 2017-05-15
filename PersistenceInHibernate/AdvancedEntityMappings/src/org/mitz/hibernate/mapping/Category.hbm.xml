@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="org.mitz.model">
+	<class name="Category" table="CATEGORY_MASTER">
+		<id name="id" column="CATEGORY_ID" type="java.lang.Long">
+			<generator class="native" />
+		</id>
+		<property name="name" column="NAME"/>
+		<set name="items" table="ITEM_CATEGORY" cascade="save-update">
+			<key column="CATEGORY_ID" />
+			<many-to-many class="Item" column="ITEM_ID" />
+		</set>
+	</class>
+</hibernate-mapping>

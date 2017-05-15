@@ -1,9 +1,11 @@
 package org.mitz;
 
+import org.mitz.dao.CategoryDao;
 import org.mitz.dao.ItemDao;
 import org.mitz.dao.UserDao;
 import org.mitz.model.Address;
 import org.mitz.model.Bid;
+import org.mitz.model.Category;
 import org.mitz.model.Item;
 import org.mitz.model.User;
 
@@ -21,6 +23,7 @@ public class Program {
 		user.setShippingAddress(address);
 		
 		UserDao userDao = new UserDao();
+		CategoryDao categoryDao = new CategoryDao();
 		Item item = new Item();
 		item.setName("ITEM1");
 		
@@ -32,11 +35,16 @@ public class Program {
 		bid2.setAmount(14);
 		item.addBid(bid2);
 		
+		Category category = new Category();
+		category.setName("Category 1");
+		category.addItem(item);
+		categoryDao.create(category);
 		user.addBoughtItems(item);
 		
 		userDao.create(user);
 		
-		item = new ItemDao().retrieve(3l);
+		
+		item = new ItemDao().retrieve(2l);
 		System.out.println(item.getBuyer());
 	}
 }

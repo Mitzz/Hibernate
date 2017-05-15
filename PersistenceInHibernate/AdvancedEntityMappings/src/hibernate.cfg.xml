@@ -32,5 +32,6 @@
 		<mapping resource="org/mitz/hibernate/mapping/Address.hbm.xml" />
 		<mapping resource="org/mitz/hibernate/mapping/Item.hbm.xml" />
 		<mapping resource="org/mitz/hibernate/mapping/Bid.hbm.xml" />
+		<mapping resource="org/mitz/hibernate/mapping/Category.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
