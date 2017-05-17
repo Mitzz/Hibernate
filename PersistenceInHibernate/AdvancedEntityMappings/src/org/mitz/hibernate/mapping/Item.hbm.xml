@@ -12,9 +12,9 @@
 			<list-index base="1" column="BID_POSITION" />
 			<one-to-many class="Bid"/>
 		</list>
-		<set name="categories" table="ITEM_CATEGORY" inverse="true" cascade="save-update" lazy="false">
+		<set name="categorizedItems" inverse="true" cascade="save-update">
 			<key column="ITEM_ID" />
-			<many-to-many class="Category" column="CATEGORY_ID" />
+			<one-to-many class="CategorizedItem" />
 		</set>
 		<join table="ITEM_BUYER" optional="true" inverse="true" >
 			  <key column="ITEM_ID" unique="true" not-null="true" />

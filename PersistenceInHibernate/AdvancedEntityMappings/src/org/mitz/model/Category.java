@@ -3,14 +3,14 @@ package org.mitz.model;
 import java.util.HashSet;
 import java.util.Set;
 
+
 public class Category {
 
 	private Long id;
 	private String name;
-	private Set<Item> items = new HashSet<Item>();
+	private Set<CategorizedItem> categorizedItems = new HashSet<CategorizedItem>();
 
-	public Category() {
-	}
+	public Category() {}
 
 	public String getName() {
 		return name;
@@ -29,19 +29,13 @@ public class Category {
 		this.name = name;
 		return this;
 	}
-
-	public Set<Item> getItems() {
-		return items;
+	
+	public Set<CategorizedItem> getCategorizedItems() {
+		return categorizedItems;
 	}
 
-	public Category setItems(Set<Item> items) {
-		this.items = items;
-		return this;
-	}
-
-	public Category addItem(Item item) {
-		items.add(item);
-		item.addCategory(this);
+	public Category setCategorizedItems(Set<CategorizedItem> categorizedItems) {
+		this.categorizedItems = categorizedItems;
 		return this;
 	}
 

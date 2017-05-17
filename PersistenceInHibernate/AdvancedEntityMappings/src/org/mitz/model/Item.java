@@ -11,7 +11,7 @@ public class Item {
 	private String name;
 	private List<Bid> bids = new ArrayList<Bid>();
 	private User buyer;
-	private Set<Category> categories = new HashSet<Category>();
+	private Set<CategorizedItem> categorizedItems = new HashSet<CategorizedItem>();
 	
 	public long getId() {
 		return id;
@@ -60,17 +60,13 @@ public class Item {
 		return this;
 	}
 
-	public Set<Category> getCategories() {
-		return categories;
+	public Set<CategorizedItem> getCategorizedItems() {
+		return categorizedItems;
 	}
 
-	public Item setCategories(Set<Category> categories) {
-		this.categories = categories;
+	public Item setCategorizedItems(Set<CategorizedItem> categorizedItems) {
+		this.categorizedItems = categorizedItems;
 		return this;
 	}
 
-	public Item addCategory(Category category){
-		categories.add(category);
-		return this;
-	}
 }

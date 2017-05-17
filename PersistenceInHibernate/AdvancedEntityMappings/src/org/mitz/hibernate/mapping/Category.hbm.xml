@@ -7,9 +7,9 @@
 			<generator class="native" />
 		</id>
 		<property name="name" column="NAME"/>
-		<set name="items" table="ITEM_CATEGORY" cascade="save-update">
+		<set name="categorizedItems" inverse="true" cascade="save-update">
 			<key column="CATEGORY_ID" />
-			<many-to-many class="Item" column="ITEM_ID" />
+			<one-to-many class="CategorizedItem" />
 		</set>
 	</class>
 </hibernate-mapping>
